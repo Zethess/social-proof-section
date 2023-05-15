@@ -1,0 +1,153 @@
+:root{ 
+  /* Colors */
+  /* Primary */
+  --very-dark-magenta: hsl(300, 43%, 22%);
+  --soft-pink: hsl(333, 80%, 67%);
+  
+  /* Neutral */
+  --white: hsl(0, 0%, 100%);
+  --dark-grayish-magenta: hsl(303, 10%, 53%);
+  --lightg-grayish-magenta: hsl(300, 24%, 96%);
+  
+  /* font */
+  --font-family: 'League Spartan', sans-serif;
+  
+}
+
+*{
+  box-sizing: border-box; 
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: var(--font-family);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--very-dark-magenta);
+  background-color: var(--lightg-grayish-magenta);
+  background: url("../images/bg-pattern-top-mobile.svg") no-repeat top,
+				      url("../images/bg-pattern-bottom-mobile.svg") no-repeat bottom;
+}
+
+.main{
+  margin: 70px 25px;
+}
+
+.main_text{
+  text-align: center;
+}
+
+.main_text h1{
+  font-weight: 700;
+}
+
+.main_text p{
+  margin: 18px 0;
+  line-height: 20px;
+}
+
+.main_reviews{
+  margin: 40px 0 30px 0;
+}
+
+.review{
+  background-color: hsla(303, 10%, 53%,0.09);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 15px 0;
+  text-align: center;
+  line-height: 20px;
+  color: var(--very-dark-magenta);
+  font-weight: 700;
+}
+
+.feedback{
+  background-color: var(--very-dark-magenta);
+  color: var(--white);
+  border-radius: 5px;
+  margin-bottom: 15px;
+  padding: 35px 25px;
+}
+
+.profile{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  line-height: 20px;
+}
+
+.profile img{
+  border-radius: 50%;
+  width: 35px;
+  margin-right: 20px;
+}
+
+.text span{
+  color: var(--soft-pink);
+}
+@media screen and (min-width: 800px){
+  body{
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    font-size: 18px;
+    background: url("../images/bg-pattern-top-desktop.svg") no-repeat left top,
+    url("../images/bg-pattern-bottom-desktop.svg") no-repeat  bottom;
+  }
+  
+  .main{
+    display: grid;
+    grid-template-areas: 
+    "texts reviews"
+    "feedbacks feedbacks"
+    ;
+    max-width: 1200px;
+  }
+  .main_text{
+    grid-area: texts;
+    text-align: left;
+    padding-right: 30%;
+    margin-bottom: 50px;
+  }
+  .main_text h1{
+    font-size: 60px;
+    margin-bottom: 30px;
+  }
+  .main_reviews{
+    grid-area: reviews;
+  }
+  .review{
+    display: flex;
+    padding: 15px 30px;
+    max-width: 470px;
+  }
+  .stars{
+    margin-right: 35px;
+  }
+  .main_reviews_second{
+    margin-left: 8%;
+  }
+  .main_reviews_third{
+    margin-left: 16%;
+  }
+
+  .main_feedback{
+    grid-area: feedbacks;
+    display: flex;
+    column-gap: 30px;
+  }
+  
+  .feedback{
+    height: 27vh;
+    padding: 3% 4%;
+  }
+
+  .main_feedback_second{
+    margin-top: 4%;
+  }
+
+  .main_feedback_third{
+    margin-top: 8%;
+  }
+}
